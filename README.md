@@ -3,7 +3,7 @@ AlgoSearch
 ![Alt Text](./ezgif.com-video-to-gif%20(1).gif)
 
 
-Check out the live version of AlgoSearch at [https://earnest-torrone-58c4e4.netlify.app/](https://earnest-torrone-58c4e4.netlify.app/). 🔎
+Check out the live version soon ...
 
 Welcome to AlgoSearch
 
@@ -33,7 +33,7 @@ AlgoSearch is a dynamic search engine designed to streamline your journey throug
 
 ## Live Demo
 
-Check out the live version of AlgoSearch at [https://earnest-torrone-58c4e4.netlify.app/](https://earnest-torrone-58c4e4.netlify.app/).
+soon ...
 
 ## Contributions
 
