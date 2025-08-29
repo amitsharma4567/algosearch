@@ -9,7 +9,7 @@ Welcome to AlgoSearch
 
 ## About AlgoSearch
 
-AlgoSearch is a dynamic search engine designed to streamline your journey through the world of algorithmic problems. Powered by Selenium, Express, TF-IDF, and Next.js, this tool enhances your problem-solving experience.
+AlgoSearch is a dynamic search engine designed to streamline your journey through the world of algorithmic problems. Powered by Selenium, Express, TF-IDF, this tool enhances your problem-solving experience.
 
 ## Features
 
