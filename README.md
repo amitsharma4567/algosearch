@@ -1,10 +1,5 @@
 AlgoSearch
 
-![Alt Text](./ezgif.com-video-to-gif%20(1).gif)
-
-
-Check out the live version soon ...
-
 Welcome to AlgoSearch
 
 ## About AlgoSearch
