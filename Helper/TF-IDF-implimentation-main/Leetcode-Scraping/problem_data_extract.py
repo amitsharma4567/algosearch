@@ -21,14 +21,14 @@ qdata_folder = "qData"
 
 
 def add_text_to_index(text):
-    index_path = os.path.join(qdata_folder, "C:/Users/suraj/Downloads/TF-IDF-implimentation-main/TF-IDF-implimentation-main/Leetcode-Scraping/qData/index1.txt")
+    index_path = os.path.join(qdata_folder, "C:/Users/amits/Downloads/TF-IDF-implimentation-main/TF-IDF-implimentation-main/Leetcode-Scraping/qData/index1.txt")
     with open(index_path, "a") as file:
         file.write(text)
         file.write('\n')
 
 
 def add_link_to_Qlink(text):
-    Qlink_path = os.path.join(qdata_folder, "C:/Users/suraj/Downloads/TF-IDF-implimentation-main/TF-IDF-implimentation-main/Leetcode-Scraping/qData/Qlink1.txt")
+    Qlink_path = os.path.join(qdata_folder, "C:/Users/amits/Downloads/TF-IDF-implimentation-main/TF-IDF-implimentation-main/Leetcode-Scraping/qData/Qlink1.txt")
     with open(Qlink_path, "a", encoding="utf-8", errors="ignore") as file:
         file.write(text)
 
