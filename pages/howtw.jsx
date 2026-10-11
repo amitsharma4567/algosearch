@@ -3,7 +3,7 @@ import CustomHead from "@/components/customHead";
 import { Bars2Icon } from "@heroicons/react/24/outline";
 import { IconButton } from "@material-tailwind/react";
 import Link from "next/link";
-import React, { useState } from "react";
+import React from "react";
 export default function index() {
     const [isNavOpen, setIsNavOpen] = React.useState(true);
 
@@ -17,7 +17,6 @@ export default function index() {
                         <Link href={"/"}>
                         <h1 className="monu text-sm md:text-2xl tracking-wider caret-transparent cursor-pointer"><span className='text-blue-600'>Algo</span>Search</h1>
                         </Link>
-                        <p className="text-blue-600 border-[1px] border-blue-600 rounded-md md:px-2 md:py-[2px] p-1 text-xs md:text-sm font-extrabold comfort">Beta</p>
                     </div>
                     <div className="flex justify-start items-center gap-3">
                         <DarkMode />
@@ -48,31 +47,42 @@ export default function index() {
                 </div>
 
                 <div className="w-[90vw] h-full bg-[#eaeaeaec] dark:bg-[#232327]  mx-auto rounded-md my-10 p-4 flex justify-start items-center flex-col gap-5 comfort">
-                    <div>
+                    <div className="w-full">
                         <h1 className="monu text-xl text-blue-600">
-                            Scrapping
+                            Prepared Problem Data
                         </h1>
                         <p>
-                            In order to provide a comprehensive search experience for algorithmic problems, we understand the importance of having a diverse and extensive dataset. To accomplish this, we employ web scraping techniques to gather relevant data from various online sources. By collecting and organizing this data, we ensure that AlgoSearch has a rich repository of algorithms to search and process with machine learning algorithms.
+                            AlgoSearch searches a prepared collection of LeetCode problem descriptions, titles, links, and difficulty labels. The data is stored with the project and is not scraped from LeetCode each time someone searches.
                         </p>
                     </div>
-                    <div>
-                        <h1 className="monu text-xl text-blue-600">Implementing TF-IDF</h1>
+                    <div className="w-full">
+                        <h1 className="monu text-xl text-blue-600">Ranking Keyword Matches</h1>
                         <p>
-                            Once the data is obtained through web scraping, we leverage the power of machine learning to enhance the search capabilities of AlgoSearch. One of the key algorithms we implement is TF-IDF (Term Frequency-Inverse Document Frequency). TF-IDF allows us to analyze the importance of each keyword within the context of the entire dataset. By implementing TF-IDF on the scraped data, we ensure that AlgoSearch delivers accurate and relevant results based on the user's search query.
+                            When you submit a query, the app splits it into words and compares them with the prepared search index. TF-IDF scores help rank problems whose descriptions contain relevant terms; title matches are also included. The ranking is a guide, so trying different keywords can surface different results.
                         </p>
                     </div>
-                    <div>
-                        <h1 className="monu text-xl text-blue-600">Setting up Backend</h1>
+                    <div className="w-full">
+                        <h1 className="monu text-xl text-blue-600">Handling a Search Request</h1>
                         <p>
-                            ehind the scenes, AlgoSearch relies on a robust backend infrastructure to process user requests and deliver the predicted results. We have developed a RESTful API that efficiently handles incoming queries and communicates with the machine learning algorithms running in the background. This setup ensures seamless interaction between the frontend and backend components of AlgoSearch, enabling fast and reliable performance.
+                            The search page sends the query to the local Next.js API route. That route calls the JavaScript search code and returns matching problem records to the page; the frontend and API run in the same Next.js app.
                         </p>
                     </div>
-                    <div>
+                    <div className="w-full">
                         <h1 className="monu text-xl text-blue-600">Frontend</h1>
                         <p>
-
-                            The frontend of AlgoSearch is designed to provide a user-friendly and intuitive interface for users to interact with the system. To achieve this, we utilize Next.js for server-side rendering, which enhances the loading speed and overall performance of the application. Additionally, we have developed a custom API that connects the frontend to the backend, allowing users to retrieve detailed information about their search results. The frontend of AlgoSearch combines functionality with a visually appealing design, ensuring an enjoyable user experience.
+                            Results appear as cards showing the problem title and difficulty. From a card, you can open the LeetCode problem or its solution page.
+                        </p>
+                    </div>
+                    <div className="w-full">
+                        <h1 className="monu text-xl text-blue-600">Writing a Useful Query</h1>
+                        <p>
+                            Start with a few specific terms that describe the topic or technique you have in mind. If results are too broad or miss what you expected, try alternate wording or add another relevant term. Search matches words in the prepared data; it does not interpret a query like a conversational assistant.
+                        </p>
+                    </div>
+                    <div className="w-full">
+                        <h1 className="monu text-xl text-blue-600">Dataset and Result Limits</h1>
+                        <p>
+                            The app searches its bundled dataset, so newly added LeetCode problems will not appear until that data is updated. Ranking uses keyword relevance and title matches, so results are suggestions rather than a guarantee that a problem fits your intent.
                         </p>
                     </div>
                 </div>

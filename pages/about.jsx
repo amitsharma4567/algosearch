@@ -3,7 +3,7 @@ import CustomHead from "@/components/customHead";
 import { Bars2Icon } from "@heroicons/react/24/outline";
 import { IconButton } from "@material-tailwind/react";
 import Link from "next/link";
-import React, { useState } from "react";
+import React from "react";
 export default function index() {
     const [isNavOpen, setIsNavOpen] = React.useState(true);
 
@@ -16,7 +16,6 @@ export default function index() {
                     <div className="flex justify-start items-center gap-2 ">
                         <Link href={"/"}>
                             <h1 className="monu text-sm md:text-2xl tracking-wider caret-transparent cursor-pointer"><span className='text-blue-600'>Algo</span>Search</h1></Link>
-                        <p className="text-blue-600 border-[1px] border-blue-600 rounded-md md:px-2 md:py-[2px] p-1 text-xs md:text-sm font-extrabold comfort">Beta</p>
                     </div>
                     <div className="flex justify-start items-center gap-3">
                         <DarkMode />
@@ -48,64 +47,47 @@ export default function index() {
 
                 <div className="w-[90vw] h-full bg-[#eaeaeaec] dark:bg-[#232327]  mx-auto rounded-md my-10 p-4 flex justify-start items-center flex-col gap-5 comfort">
                     <p>
-                        Welcome to <span className="monu">AlgoSearch</span>, the ultimate algorithmic problems search engine. Developed for the prestigious Algozenith Web Dev Hackathon, AlgoSearch is your go-to platform for finding the perfect DSA (Data Structures and Algorithms) or CP (Competitive Programming) problem.
+                        <span className="monu">AlgoSearch</span> helps you find LeetCode problems by describing a topic or idea in your own words. It is a lightweight search tool for people practicing data structures, algorithms, and competitive programming.
                     </p>
                     <p>
-                        Our mission is to make your coding journey more efficient and enjoyable. Whether you're a beginner looking to sharpen your skills or a seasoned programmer in need of a challenge, AlgoSearch is here to help.
-                    </p>
-                    <p>
-
-                        With a simple keyword search, you can easily explore a vast collection of problems curated by industry experts. AlgoSearch leverages powerful algorithms and intelligent indexing techniques to deliver accurate and relevant results for your specific needs. We understand that time is precious, and our aim is to save you valuable hours spent on searching for the right problem.
+                        Instead of browsing problem lists one by one, enter a few keywords and review matching problems ranked by relevance. Each result includes its title, difficulty, and a link to the problem.
+                        Use it to find interview practice, revisit a data structures topic, or look for problems involving a technique you want to study.
                     </p>
                     <p>
 
-                        Join the AlgoSearch community today and unlock a world of challenging and engaging algorithmic problems. Whether you're preparing for coding interviews, participating in programming competitions, or simply honing your problem-solving skills, AlgoSearch has got you covered.
+                        Search is powered by a preprocessed LeetCode dataset and TF-IDF-based keyword ranking, with problem-title matches included as well. The data is bundled with the project; searches do not scrape live websites.
                     </p>
                     <p>
-                        Embrace the power of algorithms and embark on an exciting problem-solving adventure with <span className="monu">AlgoSearch!</span>
-                    </p>
-                    <p>
-                        Developer  <span className="text-blue-600 cursor-pointer">Aryan Singh</span>
+                        Results depend on words in the saved problem data. Search is keyword-based rather than conversational, so try alternate terms if the first results are not a good fit.
                     </p>
                 </div>
                 <div className="my-10 w-[90vw] mx-auto">
                     <h1 className="monu text-3xl text-blue-600 my-10">Features</h1>
 
                     <div>
-                        <h1 class="mb-4 py-0 flex flex-col text-xl monu font-bold border-l-[8px] pl-3 border-blue-600">Theme Switch: Dark and Light Mode, Auto Fetch Theme</h1>
-                        <p class="mb-4 py-0 flex flex-col comfort">Seamlessly switch between dark and light modes with automatic theme detection.</p>
+                        <h1 class="mb-4 py-0 flex flex-col text-xl monu font-bold border-l-[8px] pl-3 border-blue-600">Light and Dark Themes</h1>
+                        <p class="mb-4 py-0 flex flex-col comfort">Switch themes from the interface; your choice is saved in the browser.</p>
 
-                        <h1 class="mb-4 py-0 flex flex-col text-xl monu font-bold border-l-[8px] pl-3 border-blue-600">Platform Tag for a Particular Problem</h1>
-                        <p class="mb-4 py-0 flex flex-col comfort">Categorizing and organizing problems based on the platform they belong to.</p>
-                        <h1 class="mb-4 py-0 flex flex-col text-xl monu font-bold border-l-[8px] pl-3 border-blue-600">Difficulty Criteria of the Problem</h1>
-                        <p class="mb-4 py-0 flex flex-col comfort">Classifying problems based on their level of difficulty to aid user selection.</p>
-                        <h1 class="mb-4 py-0 flex flex-col text-xl monu font-bold border-l-[8px] pl-3 border-blue-600">Server Side Rendering for Query Predictions</h1>
-                        <p class="mb-4 py-0 flex flex-col comfort">Enhancing query predictions with efficient rendering techniques.</p>
+                        <h1 class="mb-4 py-0 flex flex-col text-xl monu font-bold border-l-[8px] pl-3 border-blue-600">Problem Difficulty</h1>
+                        <p class="mb-4 py-0 flex flex-col comfort">See the available Easy, Medium, or Hard label on each problem card.</p>
+                        <h1 class="mb-4 py-0 flex flex-col text-xl monu font-bold border-l-[8px] pl-3 border-blue-600">Keyword-Based Ranking</h1>
+                        <p class="mb-4 py-0 flex flex-col comfort">Results are ranked using keyword relevance from the prepared problem data and title matches.</p>
 
-                        <h1 class="mb-4 py-0 flex flex-col text-xl monu font-bold border-l-[8px] pl-3 border-blue-600">Top 20 Results from the Algorithmic Predictions</h1>
-                        <p class="mb-4 py-0 flex flex-col comfort">Providing the most relevant and accurate results based on advanced algorithms.</p>
+                        <h1 class="mb-4 py-0 flex flex-col text-xl monu font-bold border-l-[8px] pl-3 border-blue-600">Problem and Solution Links</h1>
+                        <p class="mb-4 py-0 flex flex-col comfort">Open a problem or its LeetCode solution page directly from a result card.</p>
+
+                        <h1 class="mb-4 py-0 flex flex-col text-xl monu font-bold border-l-[8px] pl-3 border-blue-600">Search from Prepared Data</h1>
+                        <p class="mb-4 py-0 flex flex-col comfort">The included problem data makes search available without scraping a website for each query.</p>
 
                         <h1 class="mb-4 py-0 flex flex-col text-xl monu font-bold border-l-[8px] pl-3 border-blue-600">Simple and User-Friendly UI</h1>
-                        <p class="mb-4 py-0 flex flex-col comfort">Streamlined interface designed for easy navigation and optimal user experience.</p>
+                        <p class="mb-4 py-0 flex flex-col comfort">A compact layout keeps the search box and matching problems easy to find.</p>
 
 
 
-                        <h1 class="mb-4 py-0 flex flex-col text-xl monu font-bold border-l-[8px] pl-3 border-blue-600">One Click Solution / Editorial of the Problem</h1>
-                        <p class="mb-4 py-0 flex flex-col comfort">Instant access to problem solutions and detailed editorials with a single click.</p>
-
-                        <h1 class="mb-4 py-0 flex flex-col text-xl monu font-bold border-l-[8px] pl-3 border-blue-600">More New Features with Upcoming Updates</h1>
-                        <p class="mb-4 py-0 flex flex-col comfort">Exciting new features and enhancements coming soon to further improve the platform.</p>
 
                     </div>
                 </div>
             </main>
-        </>
-    )
-}
-function Card() {
-    return (
-        <>
-
         </>
     )
 }

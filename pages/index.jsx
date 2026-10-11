@@ -19,11 +19,7 @@ export default function Home() {
   return (
     <div className={`bg-transparent h-fit w-screen flex flex-col items-center justify-center ${comfort.className}`}>
       <CustomHead />
-      {/* <Navbar /> */}
-      {/* <Testimonial /> */}
-      {/* <FAQ /> */}
       <NewComp />
-      {/* <Footer /> */}
 
     </div>
   )
@@ -41,7 +37,7 @@ function NewComp() {
     setData([]);
     let myQuery = query.split(" ");
     console.log(myQuery);
-    await axios.get('https://algosearch-backend.onrender.com/search', {
+    await axios.get('/api/hello', {
       headers: {
         'Content-Type': 'application/json'
       },
@@ -65,7 +61,6 @@ function NewComp() {
           <div className="flex justify-start items-center gap-2 ">
 
             <h1 className="monu text-sm md:text-2xl tracking-wider caret-transparent"><span className='text-blue-600'>Algo</span>Search</h1>
-            <p className="text-blue-600 border-[1px] border-blue-600 rounded-md p-1 text-xs font-extrabold comfort">Beta</p>
           </div>
           <div className="flex justify-start items-center gap-3">
             <DarkMode />
@@ -119,7 +114,7 @@ function NewComp() {
                 <path stroke-linecap="round" stroke-linejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" />
               </svg>
                 {/* Text */}
-              </button></div></div></form><div class="px-3 pb-3 pt-2 text-center text-xs text-gray-600 dark:text-gray-300 md:px-4 md:pb-6 md:pt-3"><span>AlgoSearch in beta testing may produce inaccurate predictions. <a href="https://www.linkedin.com/in/amit-kumar-sharma-404233325" target="_blank" rel="noreferrer" class="underline">Developer AlgoSearch</a></span></div></div>
+              </button></div></div></form><div class="px-3 pb-3 pt-2 text-center text-xs text-gray-600 dark:text-gray-300 md:px-4 md:pb-6 md:pt-3"><span>Results are keyword-based suggestions; try different terms if you don't find a relevant problem. Built by <a href="https://www.linkedin.com/in/amit-kumar-sharma-404233325" target="_blank" rel="noreferrer" class="underline">Amit Kumar Sharma</a>.</span></div></div>
           </div>
         </div>
       </main>

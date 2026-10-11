@@ -1,43 +1,46 @@
-AlgoSearch
+# AlgoSearch
 
-Welcome to AlgoSearch
+AlgoSearch is a web app for finding LeetCode problems by searching for keywords in their descriptions. It ranks matching problems with a TF-IDF-based search and shows each problem's title, difficulty, and link.
 
-## About AlgoSearch
+## Tech stack
 
-AlgoSearch is a dynamic search engine designed to streamline your journey through the world of algorithmic problems. Powered by Selenium, Express, TF-IDF, this tool enhances your problem-solving experience.
+- **Frontend and API:** Next.js 13 and React 18
+- **Styling:** Tailwind CSS and custom CSS
+- **Search:** JavaScript TF-IDF implementation using the included preprocessed problem data
+- **Search data:** Preprocessed problem descriptions and lookup files included in the repository
 
-## Features
+## Run locally
 
-- **Efficient Problem Search:** AlgoSearch helps you quickly find algorithmic problems from various sources.
-- **TF-IDF Algorithm:** Leveraging TF-IDF for accurate and relevant search results.
-- **Real-time Results:** Experience real-time updates as you search for your next challenge.
+Requirements: Node.js and npm.
 
-## Getting Started
+1. Clone this repository and open a terminal in the project root.
+2. Install dependencies:
 
-1. Clone the repository
-2. Install dependencies
-3. Run the app: `npm run dev`
+   ```bash
+   npm install
+   ```
 
-## Project Structure
+3. Start the development server:
 
-- `src/`: Contains the frontend code.
-- `server/`: Houses the Express backend that powers the search engine.
-- `scripts/`: Includes scripts for data retrieval using Selenium.
+   ```bash
+   npm run dev
+   ```
 
-## Live Demo
+4. Open [http://localhost:3000](http://localhost:3000).
 
-soon ...
+The frontend sends searches to the local Next.js API route at `/api/hello`. That route calls the search implementation in `Helper/TF-IDF-implimentation-main/index.js` and reads the prepared data files in that helper directory. The frontend and API run together in the Next.js development server.
 
-## Contributions
+## Project structure
 
-Contributions are welcome! Whether you're a developer, designer, or algorithm enthusiast, feel free to contribute to AlgoSearch.
+- `pages/` - Next.js pages and API routes
+- `pages/api/hello.js` - local search API endpoint
+- `components/` - reusable interface components
+- `styles/` - global styles and custom CSS
+- `Helper/TF-IDF-implimentation-main/index.js` - search implementation
+- `Helper/TF-IDF-implimentation-main/` - search implementation and its prepared data files
+- `public/` - static assets
 
-## Feedback
+## Notes
 
-Got feedback or suggestions? We'd love to hear from you. Open an issue or reach out to us.
-
-## Acknowledgments
-
-Special thanks to everyone who supported the development and testing of AlgoSearch.
-
-Let's solve algorithms with ease using AlgoSearch! Happy hacking! 🌟
+- Search uses the local data files included in the repository; it does not fetch or scrape new problems during each search.
+- Scraping and search-index generation scripts are not included; the app runs from the preprocessed data files.
